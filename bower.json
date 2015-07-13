@@ -1,0 +1,35 @@
+{
+  "name": "ReportMakerMS",
+  "version": "0.0.1",
+  "authors": [
+    "Bryce Matsuda"
+  ],
+  "description": "Player report generator for MapleStory MMORPG.",
+  "keywords": [
+    "maplestory",
+    "maple",
+    "story",
+    "report",
+    "bot",
+    "abuse",
+    "hacker",
+    "ms",
+    "forum",
+    "generate"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "jquery": "~2.1.4",
+    "moment-timezone": "~0.4.0",
+    "underscore": "~1.8.3",
+    "bootstrap-sass": "~3.3.5"
+  }
+}

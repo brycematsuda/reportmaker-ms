@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ReportMakerMS - player report generator for maplestory</title>
+  <script type="text/javascript" src="public/js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="public/css/main.css">
+</head>
+<body ng-app="reportmaker-ms" ng-controller="ReportController">
+  <div class="container">
+    <div class="page-header">
+      <h3>ReportMakerMS <small>player report generator for maplestory</small></h3>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <ul>
+        <li><h4>Input Report Data</h4></li>
+          <li><label>Bot Type</label>
+            <select class="form-control form-control-small" ng-model="bot.type">
+              <option>Demon Slayer Bot</option>
+              <option>Meso Advertiser Bot</option>
+            </select>
+          </li>
+          <li><label>Bot Name: </label><input class="form-control form-control-small" type="text" ng-model="bot.name"></li>
+          <li><label>Time of Issue:</label><input class="form-control form-control-small" id="time" type="text" ng-model="bot.time"><button id="timeNow" ng-click="bot.time = getTime()" class="btn btn-info">Use Current Time @ Nexon HQ</button></li>
+          <li><label>Map: </label><angucomplete-alt id="map" placeholder="Search maps"
+            pause="100"
+            selected-object="map"
+            local-data="maps"
+            search-fields="name"
+            title-field="name"
+            minlength="1"
+            input-class="form-control form-control-small"></angucomplete-alt></li>
+            <li><label>Channel: </label>
+              <select class="form-control form-control-small" ng-model="bot.channel">
+                <option ng-repeat="n in _.range(1, 21)">{{n}}</option>
+              </select>
+            </li>
+            <li><label>Video Link:</label><input class="form-control form-control-small" type="text" ng-model="bot.video"></li>
+            <li><label>Image Link: </label><input class="form-control form-control-small" type="text" ng-model="bot.image"></li>
+            <li><label>Ticket ID:</label><input class="form-control form-control-small" type="text" ng-model="bot.ticket"></li>
+          </ul>
+        </div>
+        <div class="output col-md-8">
+          <ul>
+            <li><h4>Output Report Thread Title:</h4></li>
+            <li>{{ bot.name }} - {{ bot.type}}</li>
+            <li><h4>Thread Body:</li>
+            <li ng-if="bot.image.length > 0">[quote][img]{{ bot.image }}[/img][/quote]</li>
+            <li ng-if="bot.video.length > 0">[quote][video]{{ bot.video }}[/video][/quote]</li>
+            <li>Character Name: {{ ign }}</li>
+            <li>World: {{ world }}</li>
+            <li>Approximate Time and Date of Incident: {{ bot.time }}</li>
+            <li>Reported Character's Name: {{ bot.name}} </li>
+            <li>Map: {{ map.title }}</li>
+            <li>Channel: {{ bot.channel }}</li>
+            <li ng-if="bot.image.length > 0">Image: {{ bot.image }}</li>
+            <li ng-if="bot.video.length > 0">Video: {{ bot.video }}</li>
+            <li>Description of Incident: {{ bot.type }}</li>
+            <li ng-if="bot.ticket.length > 0">Ticket ID: #{{ bot.ticket }}</li>
+            <li><button id="clear" ng-click="clear()" class="btn btn-default">Clear</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
