@@ -33,7 +33,7 @@ Usage
 2. Fill out information as best as possible in the form on the left. The output report is immediately generated on the right.
 3. The purpose of the first output line is to serve as the forum thread. The rest is to be copy-pasted into the forum thread body.
 4. To clear form/report, click "Clear" button.
-5. The reporter's IGN and game world can be changed in `src/controller.js` under `$scope.ign` and `$scope.world`. This will be hopefully changed in a future release.
+5. The reporter's IGN and game world can be saved by clicking "Save Character Info." This utilizes HTML5's localStorage feature which is present in all modern browsers.
 
 Code Changes
 ==============================
