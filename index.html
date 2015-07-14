@@ -13,7 +13,12 @@
     <div class="row">
       <div class="form-group col-md-4">
         <ul>
-        <li><h4>Input Report Data</h4></li>
+          <li><h4>Input Report Data</h4></li>
+          <li><label>Your IGN:</label><input class="form-control form-control-small" type="text" ng-model="ign"></li>
+          <li><label>World: </label><select class="form-control form-controll-small" ng-model="world">
+            <option ng-repeat="world in worlds">{{ world }}</option>
+            </select></li>
+          <li><button id="saveChar" ng-click="saveInfo()" class="btn btn-info">Save Character Info</button></li>
           <li><label>Bot Type</label>
             <select class="form-control form-control-small" ng-model="bot.type">
               <option>Demon Slayer Bot</option>

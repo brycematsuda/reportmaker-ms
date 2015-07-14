@@ -37,11 +37,10 @@ Usage
 
 Code Changes
 ==============================
-Do all JS/SCSS changes in the src/ folder. Then in the root directory run `gulp` to apply changes (concatenated and minified) to the output public/ directory.
+Do all JS/SCSS changes in the `src/` folder. Then in the root directory run `gulp` to apply changes (concatenated and minified) to the output `public/` directory.
 
 To-Do
 ==============================
 - Expand report types beyond advertiser bots and meso farmer Demon Slayer bots.
 - Add copy to clipboard function.
-- Add option to permanently save reportee's IGN and world using LocalStorage, rather than hardcoding in in controller.js.
 - Add more popular advertiser / bot maps.

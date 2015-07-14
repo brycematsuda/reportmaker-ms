@@ -1,12 +1,14 @@
 var qbr = angular.module("reportmaker-ms", ["angucomplete-alt"]);
 
 qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $rootScope) {
-  
+
   // Underscore library
   $scope._ = _;
 
-  $scope.ign = "SoundVoltex";
-  $scope.world = "Galicia";
+  $scope.worlds = ["Scania", "Bera", "Windia", "Khaini", "Broa", "Mardia", "Yellonde", "Bellocan", "Chaos", "Kradia", "Nova", "Galicia", "Renegades", "Arcania", "Zenith", "El Nido East Coast", "Demethos"];
+
+  if (localStorage.getItem('ign')) $scope.ign = localStorage.getItem('ign');
+  if (localStorage.getItem('world')) $scope.world = localStorage.getItem('world');
 
   // Popular bot hangout maps.
   $scope.maps = [
@@ -31,4 +33,15 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
     $scope.bot = null;
     $rootScope.$broadcast('angucomplete-alt:clearInput');
   };
+
+  $scope.saveInfo = function() {
+    if (Modernizr.localstorage) {
+      localStorage.setItem('ign', $scope.ign);
+      localStorage.setItem('world', $scope.world);
+      alert("Information saved.");
+    } else {
+      alert("Your browser does not support HTML5 LocalStorage. Please update your browser.");
+    }
+  };
+  
 }]);
