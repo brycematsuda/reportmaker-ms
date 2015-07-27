@@ -21,7 +21,7 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
   {name: "North Forest: Giant Tree"},
   {name: "Perion: Burning Heat"},
   {name: "Perion: Ash-Covered Land"},
-  {name: "Dark Ereve: First Drill Hall"}
+  {name: "Dark Ereve: First Drill Hall"},
   {name: "Dark Ereve: Second Drill Hall"}
   ];
 
