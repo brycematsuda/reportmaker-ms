@@ -17,12 +17,12 @@
           <li><label>Your IGN:</label><input class="form-control form-control-small" type="text" ng-model="ign"></li>
           <li><label>World: </label><select class="form-control form-controll-small" ng-model="world">
             <option ng-repeat="world in worlds">{{ world }}</option>
-            </select></li>
+          </select></li>
           <li><button id="saveChar" ng-click="saveInfo()" class="btn btn-info">Save Character Info</button></li>
           <li><label>Bot Type</label>
             <select class="form-control form-control-small" ng-model="bot.type">
               <option>Demon Slayer Bot</option>
-              <option>Meso Advertiser Bot</option>
+              <option>Meso Selling Advertiser Bot</option>
             </select>
           </li>
           <li><label>Bot Name: </label><input class="form-control form-control-small" type="text" ng-model="bot.name"></li>
@@ -49,7 +49,7 @@
           <ul>
             <li><h4>Output Report Thread Title:</h4></li>
             <li>{{ bot.name }} - {{ bot.type}}</li>
-            <li><h4>Thread Body:</li>
+            <li><h4>Thread Body:</li></h4></li>
             <li ng-if="bot.image.length > 0">[quote][img]{{ bot.image }}[/img][/quote]</li>
             <li ng-if="bot.video.length > 0">[quote][video]{{ bot.video }}[/video][/quote]</li>
             <li>Character Name: {{ ign }}</li>
@@ -67,5 +67,6 @@
         </div>
       </div>
     </div>
-  </body>
-  </html>
+  </div>
+</body>
+</html>

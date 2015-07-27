@@ -5,7 +5,7 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
   // Underscore library
   $scope._ = _;
 
-  $scope.worlds = ["Scania", "Bera", "Windia", "Khaini", "Broa", "Mardia", "Yellonde", "Bellocan", "Chaos", "Kradia", "Nova", "Galicia", "Renegades", "Arcania", "Zenith", "El Nido East Coast", "Demethos"];
+  $scope.worlds = ["Scania", "Bera", "Windia", "Khaini", "Broa", "Mardia", "Yellonde", "Bellocan", "Chaos", "Kradia", "Nova", "Galicia", "Renegades", "Arcania", "Zenith", "El Nido", "Demethos"];
 
   if (localStorage.getItem('ign')) $scope.ign = localStorage.getItem('ign');
   if (localStorage.getItem('world')) $scope.world = localStorage.getItem('world');
@@ -18,7 +18,11 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
   {name: "North Forest: Green Tree Trunk"},
   {name: "North Forest: North Forest Lot"},
   {name: "North Forest: Young Tree Forest"},
-  {name: "North Forest: Giant Tree"}
+  {name: "North Forest: Giant Tree"},
+  {name: "Perion: Burning Heat"},
+  {name: "Perion: Ash-Covered Land"},
+  {name: "Dark Ereve: First Drill Hall"}
+  {name: "Dark Ereve: Second Drill Hall"}
   ];
 
   // Use PST, timezone at Nexon America HQ
@@ -28,7 +32,6 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
     return moment().tz("America/Los_Angeles").format("l LTS") + " PST";
   };
 
-  // Clear form
   $scope.clear = function() {
     $scope.bot = null;
     $rootScope.$broadcast('angucomplete-alt:clearInput');
@@ -43,5 +46,5 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
       alert("Your browser does not support HTML5 LocalStorage. Please update your browser.");
     }
   };
-  
+
 }]);
