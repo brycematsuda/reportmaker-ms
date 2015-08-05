@@ -27,14 +27,8 @@
           </li>
           <li><label>Bot Name: </label><input class="form-control form-control-small" type="text" ng-model="bot.name"></li>
           <li><label>Time of Issue:</label><input class="form-control form-control-small" id="time" type="text" ng-model="bot.time"><button id="timeNow" ng-click="bot.time = getTime()" class="btn btn-info">Use Current Time @ Nexon HQ</button></li>
-          <li><label>Map: </label><angucomplete-alt id="map" placeholder="Search maps"
-            pause="100"
-            selected-object="map"
-            local-data="maps"
-            search-fields="name"
-            title-field="name"
-            minlength="1"
-            input-class="form-control form-control-small"></angucomplete-alt></li>
+          <li><label>Map: </label><select class="form-control form-control-small" ng-model="map.name" ng-options="map for map in maps"></select></li>
+          <li ng-if="map.name == 'Other'"><input class="form-control form-control-small" type="text" ng-model="map.otherName"></li>
             <li><label>Channel: </label>
               <select class="form-control form-control-small" ng-model="bot.channel">
                 <option ng-repeat="n in _.range(1, 21)">{{n}}</option>
@@ -47,7 +41,7 @@
         </div>
         <div class="output col-md-8">
           <ul>
-            <li><h4>Output Report Thread Title:</h4></li>
+            <li><h4>Output Report Thread Title: {{ console10 }}</h4></li>
             <li>{{ bot.name }} - {{ bot.type}}</li>
             <li><h4>Thread Body:</li></h4></li>
             <li ng-if="bot.image.length > 0">[quote][img]{{ bot.image }}[/img][/quote]</li>
@@ -56,8 +50,9 @@
             <li>World: {{ world }}</li>
             <li>Approximate Time and Date of Incident: {{ bot.time }}</li>
             <li>Reported Character's Name: {{ bot.name}} </li>
-            <li>Map: {{ map.title }}</li>
-            <li>Channel: {{ bot.channel }}</li>
+            <li ng-if="map.name != 'Other'">Map: {{ map.name }}</li>
+            <li ng-if="map.name == 'Other'">Map: {{ map.otherName }}</li>
+            <li >Channel: {{ bot.channel }}</li>
             <li ng-if="bot.image.length > 0">Image: {{ bot.image }}</li>
             <li ng-if="bot.video.length > 0">Video: {{ bot.video }}</li>
             <li>Description of Incident: {{ bot.type }}</li>

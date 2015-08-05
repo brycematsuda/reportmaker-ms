@@ -1,4 +1,4 @@
-var qbr = angular.module("reportmaker-ms", ["angucomplete-alt"]);
+var qbr = angular.module("reportmaker-ms");
 
 qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
@@ -12,17 +12,18 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
 
   // Popular bot hangout maps.
   $scope.maps = [
-  {name: "Hidden Street: Free Market Entrance"},
-  {name: "Hidden Street: Free Market<7>"},
-  {name: "Henesys: Henesys"},
-  {name: "North Forest: Green Tree Trunk"},
-  {name: "North Forest: North Forest Lot"},
-  {name: "North Forest: Young Tree Forest"},
-  {name: "North Forest: Giant Tree"},
-  {name: "Perion: Burning Heat"},
-  {name: "Perion: Ash-Covered Land"},
-  {name: "Dark Ereve: First Drill Hall"},
-  {name: "Dark Ereve: Second Drill Hall"}
+  "Hidden Street: Free Market Entrance",
+  "Hidden Street: Free Market<7>",
+  "Henesys: Henesys",
+  "North Forest: Green Tree Trunk",
+  "North Forest: North Forest Lot",
+  "North Forest: Young Tree Forest",
+  "North Forest: Giant Tree",
+  "Perion: Burning Heat",
+  "Perion: Ash-Covered Land",
+  "Dark Ereve: First Drill Hall",
+  "Dark Ereve: Second Drill Hall",
+  "Other"
   ];
 
   // Use PST, timezone at Nexon America HQ
@@ -34,7 +35,8 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
 
   $scope.clear = function() {
     $scope.bot = null;
-    $rootScope.$broadcast('angucomplete-alt:clearInput');
+    $scope.map.name = null;
+    $scope.map.otherName = null;
   };
 
   $scope.saveInfo = function() {
