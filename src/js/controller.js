@@ -1,4 +1,4 @@
-var qbr = angular.module("reportmaker-ms");
+var qbr = angular.module("reportmaker-ms", []);
 
 qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
@@ -23,6 +23,7 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
   "Perion: Ash-Covered Land",
   "Dark Ereve: First Drill Hall",
   "Dark Ereve: Second Drill Hall",
+  "Singapore: Along Ulu City",
   "Other"
   ];
 
@@ -35,8 +36,8 @@ qbr.controller('ReportController', ['$scope', '$rootScope', function($scope, $ro
 
   $scope.clear = function() {
     $scope.bot = null;
-    $scope.map.name = null;
-    $scope.map.otherName = null;
+    $scope.mapName = null;
+    $scope.mapOtherName = null;
   };
 
   $scope.saveInfo = function() {

@@ -21,14 +21,15 @@
           <li><button id="saveChar" ng-click="saveInfo()" class="btn btn-info">Save Character Info</button></li>
           <li><label>Bot Type</label>
             <select class="form-control form-control-small" ng-model="bot.type">
+              <option>Blaze Wizard Bot</option>
               <option>Demon Slayer Bot</option>
               <option>Meso Selling Advertiser Bot</option>
             </select>
           </li>
           <li><label>Bot Name: </label><input class="form-control form-control-small" type="text" ng-model="bot.name"></li>
           <li><label>Time of Issue:</label><input class="form-control form-control-small" id="time" type="text" ng-model="bot.time"><button id="timeNow" ng-click="bot.time = getTime()" class="btn btn-info">Use Current Time @ Nexon HQ</button></li>
-          <li><label>Map: </label><select class="form-control form-control-small" ng-model="map.name" ng-options="map for map in maps"></select></li>
-          <li ng-if="map.name == 'Other'"><input class="form-control form-control-small" type="text" ng-model="map.otherName"></li>
+          <li><label>Map: </label><select class="form-control form-control-small" ng-model="mapName" ng-options="map for map in maps"></select></li>
+          <li ng-if="map.name == 'Other'"><input class="form-control form-control-small" type="text" ng-model="mapOtherName"></li>
             <li><label>Channel: </label>
               <select class="form-control form-control-small" ng-model="bot.channel">
                 <option ng-repeat="n in _.range(1, 21)">{{n}}</option>
@@ -41,7 +42,7 @@
         </div>
         <div class="output col-md-8">
           <ul>
-            <li><h4>Output Report Thread Title: {{ console10 }}</h4></li>
+            <li><h4>Output Report Thread Title:</h4></li>
             <li>{{ bot.name }} - {{ bot.type}}</li>
             <li><h4>Thread Body:</li></h4></li>
             <li ng-if="bot.image.length > 0">[quote][img]{{ bot.image }}[/img][/quote]</li>
@@ -50,8 +51,8 @@
             <li>World: {{ world }}</li>
             <li>Approximate Time and Date of Incident: {{ bot.time }}</li>
             <li>Reported Character's Name: {{ bot.name}} </li>
-            <li ng-if="map.name != 'Other'">Map: {{ map.name }}</li>
-            <li ng-if="map.name == 'Other'">Map: {{ map.otherName }}</li>
+            <li ng-if="map.name != 'Other'">Map: {{ mapName }}</li>
+            <li ng-if="map.name == 'Other'">Map: {{ mapOtherName }}</li>
             <li >Channel: {{ bot.channel }}</li>
             <li ng-if="bot.image.length > 0">Image: {{ bot.image }}</li>
             <li ng-if="bot.video.length > 0">Video: {{ bot.video }}</li>
