@@ -44,4 +44,13 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest(config.dest + 'fonts'));
 });
 
-gulp.task('default', ['js', 'css', 'fonts']);
+// Watch for changes in js/css
+gulp.task('watch', function() {
+  // Watch js files
+  gulp.watch('src/js/*.js', ['js']);
+  // Watch css files
+  gulp.watch('src/css/*.scss', ['css']);
+});
+
+
+gulp.task('default', ['js', 'css', 'fonts', 'watch']);
